@@ -14,6 +14,7 @@ FROM ubuntu:14.04
 MAINTAINER Doug Stephen <dstephen@ihmc.us>
 
 ENV INITRD No
+ENV LOGGER_VERSION=0.7.3
 ENV IHMC_LOGGER_IP=localhost
 
 # RUN ln -sf /usr/share/zoneinfo/America/Chicago localtime
@@ -29,9 +30,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 
 RUN mkdir -p /root/.ihmc /root/robotLogs
 
-COPY ./IHMCLogger*.tar /root
+COPY ./IHMCLogger-${LOGGER_VERSION}.tar /root
 
-RUN tar -xf /root/IHMCLogger*.tar -C /root
+RUN tar -xf /root/IHMCLogger-${LOGGER_VERSION}.tar -C /root
 
 VOLUME ["/root/robotLogs"]
 
