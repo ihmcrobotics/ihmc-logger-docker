@@ -6,6 +6,21 @@ Dockerfile repository for running the IHMC Logger distribution as a Docker conta
 
 The IHMC Logger software can be synced up with video data. Currently, the docker distribution only supports a no-camera configuration. Adding camera support to the docker container is on the roadmap.
 
+## Example Usage
+
+TODO: Docker pull command. Gotta finish getting Bintray set up first.
+
+You will need to override one `ENV` variable to get the logger to work. In a typical situation, the machine hosting the IHMC Logger may have multiple network interfaces. It can only listen for log session requests on a single one of these interfaces. A standard network topology would be to have all robots in a lab on a single subnet, and the logger having a single NIC on that subnet. To make sure the logger listens for connections on the correct interface, it should be told what its own IP address is **on the corresponding interface**.
+
+Given that background info, a standard command to run the docker image might look like:
+
+```bash
+$ docker run -d --net=host -v `pwd`:/root/robotLogs \
+                           -v /etc/localtime:/etc/localtime:ro \
+                           -e IHMC_LOGGER_IP=***REMOVED*** \
+                           ihmc-logger-no-cameras
+```
+
 ## Rebuilding the container
 
 ### Using the latest release of the Logger software
