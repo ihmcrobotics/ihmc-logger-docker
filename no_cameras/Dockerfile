@@ -41,4 +41,3 @@ RUN mv /root/IHMCLogger-${LOGGER_VERSION} /root/IHMCLogger
 VOLUME ["/root/robotLogs"]
 
 CMD ["/bin/bash", "-c", "/root/IHMCLogger/bin/IHMCLogger", "-n", "-d", "/root/robotLogs"]
-# CMD ["-c", "/root/IHMCLogger/bin/IHMCLogger", "-n"]
