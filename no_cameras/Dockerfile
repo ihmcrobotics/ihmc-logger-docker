@@ -11,9 +11,10 @@
 #
 # IHMC UoE NON CAMERA LOGGER
 FROM ubuntu:14.04
-MAINTAINER Kody Ensley <kody.g.ensley@nasa.gov>
+MAINTAINER Doug Stephen <dstephen@ihmc.us>
 
 ENV INITRD No
+ENV IHMC_LOGGER_IP=localhost
 
 # RUN ln -sf /usr/share/zoneinfo/America/Chicago localtime
 RUN ln -sf /usr/share/zoneinfo/Europe/London localtime
