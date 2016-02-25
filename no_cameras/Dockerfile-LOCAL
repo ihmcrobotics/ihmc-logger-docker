@@ -30,11 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 
 RUN mkdir -p /root/.ihmc /root/robotLogs
 
-ADD https://bintray.com/artifact/download/ihmcrobotics/distributions/IHMCLogger-${LOGGER_VERSION}.tar /root/IHMCLogger-${LOGGER_VERSION}.tar
-
-RUN tar -xf /root/IHMCLogger-${LOGGER_VERSION}.tar -C /root
-
-RUN rm /root/IHMCLogger-${LOGGER_VERSION}.tar
+ADD IHMCLogger-${LOGGER_VERSION}.tar /root/
 
 RUN mv /root/IHMCLogger-${LOGGER_VERSION} /root/IHMCLogger
 
