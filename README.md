@@ -17,7 +17,7 @@ Given that background info, a standard command to run the docker image might loo
 ```bash
 $ docker run -d --net=host -v `pwd`:/root/robotLogs \
                            -v /etc/localtime:/etc/localtime:ro \
-                           -e IHMC_LOGGER_IP=***REMOVED*** \
+                           -e IHMC_LOGGER_IP=<IP ADDRESS GOES HERE> \
                            ihmc-logger-no-cameras
 ```
 
