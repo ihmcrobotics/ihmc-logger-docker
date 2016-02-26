@@ -13,11 +13,11 @@ You will need to override one `ENV` variable to get the logger to work. In a typ
 Given that background info, a standard command to run the docker image might look like:
 
 ```bash
-$ docker pull ihmcrobotics-docker-registry.bintray.io/ihmcrobotics/ihmc-logger-no-cameras:0.7.4
+$ docker pull ihmcrobotics/ihmc-logger-docker:0.7.4-no_cameras
 $ docker run -d --net=host -v `pwd`:/root/robotLogs \
                            -v /etc/localtime:/etc/localtime:ro \
                            -e IHMC_LOGGER_IP=<IP ADDRESS GOES HERE> \
-                           ihmc-logger-no-cameras
+                           ihmc-logger-docker
 ```
 
 ## Rebuilding the container
