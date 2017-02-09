@@ -13,7 +13,7 @@ You will need to override one `ENV` variable to get the logger to work. In a typ
 Given that background info, a standard command to run the docker image might look like:
 
 ```bash
-$ docker pull ihmcrobotics/ihmc-logger-docker:0.8.2-no_cameras
+$ docker pull ihmcrobotics/ihmc-logger-docker:0.9.0-no_cameras
 $ docker run -d --net=host -v `pwd`:/root/robotLogs \
                            -v /etc/localtime:/etc/localtime:ro \
                            -e IHMC_LOGGER_IP=<IP ADDRESS GOES HERE> \
@@ -28,13 +28,13 @@ The container can be rebuilt with a simple `docker build -t <your image name her
 
 ### Using locally built versions of the Logger
 
-If you want to clone this repo and build your own container from the Dockerfile and the Logger from source, then it currently requires you to clone https://github.com/ihmcrobotics/ihmc-open-robotics-software and build the Logger distribution included with the RobotDataCommunication project. You will want to use the `-LOCAL` Dockerfile as well.
+If you want to clone this repo and build your own container from the Dockerfile and the Logger from source, then it currently requires you to clone https://github.com/ihmcrobotics/ihmc-open-robotics-software and build the Logger distribution included with the IHMCRobotDataLogger project. You will want to use the `-LOCAL` Dockerfile as well.
 
-Clone the project, navigate to the `RobotDataCommunication` directory, and then run
+Clone the project, navigate to the `IHMCRobotDataLogger` directory, and then run
 
     gradle loggerDistTar
 
-This will output the tarball to `RobotDataCommunication/build/distributions`. Move the tarball to the same directory as the Dockerfile then run the build.
+This will output the tarball to `IHMCRobotDataLogger/build/distributions`. Move the tarball to the same directory as the Dockerfile then run the build.
 
     docker build -t ihmc-logger-no-cameras-local -f Dockerfile-LOCAL .
 
