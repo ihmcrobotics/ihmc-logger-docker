@@ -10,7 +10,7 @@
 #  -- DOCKERFILE --
 #
 # IHMC UoE NON CAMERA LOGGER
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Doug Stephen <dstephen@ihmc.us>
 
 ENV INITRD No
@@ -22,7 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -qqy \
 
 # Get required base set of tools
 RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
-	openjdk-7-jre-headless
+	openjdk-8-jre-headless
 
 RUN mkdir -p /root/.ihmc /root/robotLogs
 
