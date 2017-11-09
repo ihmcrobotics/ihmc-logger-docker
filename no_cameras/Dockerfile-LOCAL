@@ -14,7 +14,7 @@ FROM ubuntu:16.04
 MAINTAINER Doug Stephen <dstephen@ihmc.us>
 
 ENV INITRD No
-ENV LOGGER_VERSION=0.9.0
+ENV LOGGER_VERSION=0.10.0
 ENV IHMC_LOGGER_IP=localhost
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qqy \
