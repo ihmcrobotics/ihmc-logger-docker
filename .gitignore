@@ -1,3 +1,6 @@
 *.jar
 *.tar
 .DS_Store
+logger-blackmagic-capturecard/Blackmagic_Desktop_Video_Linux_10.8.5.tar.gz
+logger-blackmagic-capturecard/ihmc-robot-data-logger-LOCAL.tar
+logger-blackmagic-capturecard/GPL_QTS-4.3.4-20180105_Kernel.tar.gz
